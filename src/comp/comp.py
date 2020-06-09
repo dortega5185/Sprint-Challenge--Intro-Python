@@ -25,44 +25,33 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = []
-another = []
-for i in humans:
-    a.append(i.name)
-for f in range(len(a)):
-    if a[f][0] == "D":
-        another.append(a[f])
-print(another)
+a = [human.name for human in humans if human.name[0] == "D"]
+
+print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = []
-anotherone = []
-for i in humans:
-    b.append(i.name)
-for f in range(len(b)):
-    if b[f][-1] == "e":
-        anotherone.append(b[f])
-print(anotherone)
+b = [human.name for human in humans if human.name[-1] == "e"]
+
+print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = []
-cg = []
-for i in humans:
-    c.append(i.name)
-for f in range(len(c)):
-    if (
-        c[f][0] == "C"
-        or c[f][0] == "D"
-        or c[f][0] == "E"
-        or c[f][0] == "F"
-        or c[f][0] == "G"
-    ):
-        cg.append(c[f])
-print(cg)
+c = [human.name for human in humans if human.name[0] >= "C" and human.name[0] <= "G"]
+# [c.append(human.name) if human.name[0] == "C"]
+# [c.append(human.name) if human.name[0] == "D"]
+# [c.append(human.name) if human.name[0] == "E"]
+# [c.append(human.name) if human.name[0] == "F"]
+# [c.append(human.name) if human.name[0] == "G"]
+
+# elif human.name[0] == "D"
+# elif human.name[0] == "E"
+# elif human.name[0] == "F"
+# elif human.name[0] == "G"
+
+print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
